@@ -1,0 +1,14 @@
+<div class="list-card-section">
+    <div class="list-card" data-ng-repeat="product in itemList | limitTo:showProducts | orderBy:sortItem | filter:search">
+        <div class="list-card-item">
+            <img class="" src="{{ product.image }}" alt="">
+        </div>
+        <h3 class="list-card-title">{{ product.productname }}</h3>
+        <p class="list-card-description">{{ product.description }}</p>
+        <span class="list-card-price">{{ product.price }} kr</span>
+        <div class="list-card-rating">
+            <div class="list-card-rating-stars" data-ng-style="{ 'width': rating(product.rating) }"></div>
+        </div>
+        <button class="list-add-to-cart" data-ng-click="addToCart(product)">Köp</button>
+    </div>
+</div>

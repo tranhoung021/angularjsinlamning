@@ -1,0 +1,25 @@
+<div class="mt-4">
+    <h1>Hi {{vm.user[0].firstname}}!</h1>
+    <p><a href="#!/login" class="btn btn-primary">Logout</a></p>
+    <br>
+    <h3>All registered users:</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>UserId</th>
+                <th>Username</th>
+                <th>Full Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="user in vm.allUsers">
+                <td>{{ user._id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.firstname }} {{ user.lastname }}</td>
+                <td><a class="btn btn-sm btn-danger" data-ng-click="vm.deleteUser(user._id)">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

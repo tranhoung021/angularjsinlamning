@@ -1,0 +1,15 @@
+<div class="card-section">
+    <div class="card" data-ng-repeat="product in itemList | limitTo:showProducts | orderBy:sortItem | filter:search">
+
+        <div class="card-item">
+            <img class="" src="{{ product.image }}" alt="">
+        </div>
+        <h3 class="card-title">{{ product.productname }}</h3>
+        <span class="card-price">{{ product.price }} kr</span>
+        <div class="card-rating">
+            <div class="card-rating-stars" data-ng-style="{ 'width': rating(product.rating) }"></div>
+        </div>
+        <button class="add-to-cart" data-ng-click="addToCart(product)">Köp</button>
+
+    </div>
+</div>
