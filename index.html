@@ -60,10 +60,10 @@
         </div>
     </div>
 
-    <div class="top-header user-header sticky-top" >
+    <div class="top-header user-header sticky-top">
         <div class="container-header top-header-grid">
 
-          
+
             <a class="login-btn btn ml-3" href="#!login">Login/ Register</a>
             <!-- Shopping Cart -->
             <button class="mr-3 shopping-cart" type="button" id="dropdownMenuButton" data-toggle="dropdown"
@@ -89,7 +89,7 @@
 
                 <h5 class="dropdown-item mb-4">Totalt: {{ getTotalPrice() }} SEK</h5>
 
-                <a href="#!login" class="login-btn btn btn-block mb-3" >Login/ Register</a>
+                <a href="#!login" class="login-btn btn btn-block mb-3">Login/ Register</a>
                 <a class="checkout-btn btn btn-block mb-2">Checkout</a>
             </div>
 
@@ -112,8 +112,8 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
                     <a class="dropdown-item" href="#">EN</a>
-                    <a class="dropdown-item" href="#">SE</a>               
-                  </div>
+                    <a class="dropdown-item" href="#">SE</a>
+                </div>
                 <span class="phone btn-phone">+90878 87 878 7 </span>
             </div>
 
@@ -188,11 +188,16 @@
                     </div>
                 </a>
 
-              
+
 
             </div>
 
-            <select class="btn show-products" data-ng-model="rowLimit.value" data-ng-options="v for v in rowLimit.values">
+            <select class="btn show-products" data-ng-model="showProducts">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
             </select>
 
             <select class="btn sort-category" data-ng-model="sortItem">
@@ -206,9 +211,8 @@
         </div>
 
         <!-- AngularJS View -->
-        <div    ng-class="{ 'alert': dialog, 'alert-success': dialog.type === 'success', 'alert-danger': dialog.type === 'error' }" 
-                ng-if="dialog" 
-                ng-bind="dialog.message">
+        <div ng-class="{ 'alert': dialog, 'alert-success': dialog.type === 'success', 'alert-danger': dialog.type === 'error' }"
+            ng-if="dialog" ng-bind="dialog.message">
         </div>
         <div data-ng-view>
 
